@@ -1,0 +1,24 @@
+# Core LLM + LangChain
+transformers
+langchain
+torch
+langchain-community
+# Whisper ASR
+openai-whisper
+ffmpeg-python  # Optional helper for audio file processing
+
+# Text-to-Speech
+gTTS
+
+# Audio input/output (recording/mic)
+sounddevice
+scipy
+
+# minerva 350ml base
+sentencepiece
+protobuf
+
+
+#minerva quantizzato
+bitsandbytes 
+accelerate
