@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-dev \
     libsndfile1 \
+    mpg123 \
     && rm -rf /var/lib/apt/lists/*
 
 # 🔗 Fix python symlink
@@ -19,7 +20,7 @@ RUN pip install --upgrade pip
 # 🔥 Install PyTorch with CUDA 12.1
 RUN pip install torch --index-url https://download.pytorch.org/whl/cu121
 
-# 📚 Install other dependencies (except bitsandbytes)
+# 📚 Install Python dependencies (except bitsandbytes)
 RUN pip install \
     transformers \
     langchain \
@@ -30,8 +31,11 @@ RUN pip install \
     scipy \
     sentencepiece \
     protobuf \
-    accelerate 
+    accelerate \
+    gradio \
+    playsound==1.2.2 
 
+# 🧠 BitsAndBytes
 RUN pip install --no-cache-dir bitsandbytes==0.46.0
 
 # 📂 Set work directory
